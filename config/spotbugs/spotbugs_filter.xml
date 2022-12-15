@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FindBugsFilter
+              xmlns="https://github.com/spotbugs/filter/3.0.0"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="https://github.com/spotbugs/filter/3.0.0 https://raw.githubusercontent.com/spotbugs/spotbugs/3.1.0/spotbugs/etc/findbugsfilter.xsd">
+
+    <!-- Match com.webank.weid.contract.* violations. -->
+    <Match>
+      <Package name="~com\.webank\.weid\.contract\.*" />
+    </Match>
+
+    <!-- Match WeIdServiceImpl.resolveTransaction BC_UNCONFIRMED_CAST_OF_RETURN_VALUE violations. -->
+    <Match>
+        <Class name="com.webank.weid.blockchain.service.impl.WeIdServiceImpl" />
+        <Method name="resolveTransaction" />
+        <Bug pattern="BC_UNCONFIRMED_CAST_OF_RETURN_VALUE" />
+    </Match>
+
+    <!-- Match BaseService.reloadContract REC_CATCH_EXCEPTION violations. -->
+    <Match>
+        <Class name="com.webank.weid.blockchain.service.fisco.BaseServiceFisco" />
+        <Method name="reloadContract" />
+        <Bug pattern="REC_CATCH_EXCEPTION" />
+    </Match>
+
+    <!-- Match AuthorityIssuerServiceImpl.checkAuthorityIssuerArgsValidity REC_CATCH_EXCEPTION violations. -->
+    <Match>
+        <Class name="com.webank.weid.blockchain.service.impl.AuthorityIssuerServiceImpl" />
+        <Method name="checkAuthorityIssuerArgsValidity" />
+        <Bug pattern="REC_CATCH_EXCEPTION" />
+    </Match>
+    
+    <!-- 
+    	Filtering spotbug problems caused by mock and known empty problems.
+    	1. UMAC_UNCALLABLE_METHOD_OF_ANONYMOUS_CLASS
+    	2. ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+    	3. SIC_INNER_SHOULD_BE_STATIC_ANON
+    	4. NP_LOAD_OF_KNOWN_NULL_VALUE
+     -->
+    <Match>
+        <Package name="~com\.webank\.weid\.full\.*.*" />
+        <Bug pattern="UMAC_UNCALLABLE_METHOD_OF_ANONYMOUS_CLASS, ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD, SIC_INNER_SHOULD_BE_STATIC_ANON, NP_LOAD_OF_KNOWN_NULL_VALUE" />
+    </Match>
+
+</FindBugsFilter>
