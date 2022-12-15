@@ -1,0 +1,13 @@
+
+### v3.0.0 (2022-12-14)
+WeIdentity-Blockchain首次release.
+
+* 新增功能:
+1. 从WeIdentity-Java-SDK中剥离区块链相关功能，形成规范化的区块链服务接口。
+2. 整合原有的FISCO BCOS相关代码作为区块链服务的其中一种实现，为适配其他区块链提供示例。
+
+First release for weidentity-blockchain.
+
+* Features:
+1. Strip blockchain-related functions from WeIdentity-Java-SDK to form a standardized blockchain service interface.
+2. Integrate the original FISCO BCOS related code as one of the implementation of blockchain services, and provide examples for adaptation to other blockchains.
