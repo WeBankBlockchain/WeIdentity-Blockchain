@@ -13,6 +13,7 @@ import com.webank.weid.blockchain.rpc.WeIdService;
 import com.webank.weid.blockchain.util.DataToolUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
@@ -21,6 +22,7 @@ import java.util.List;
  *
  * @author chaoxinhu 2018.10
  */
+@Component("blockchain")
 public class AuthorityIssuerServiceImpl extends AbstractService implements AuthorityIssuerService {
 
     private static final Logger logger = LoggerFactory

@@ -10,12 +10,14 @@ import org.slf4j.LoggerFactory;
 
 import com.webank.weid.blockchain.constant.ErrorCode;
 import com.webank.weid.blockchain.rpc.RawTransactionService;
+import org.springframework.stereotype.Component;
 
 /**
  * Service interface for operations on direct transactions on blockchain.
  *
- * @author chaoxinhu 2019.4
+ * @author afeexian 2022.8
  */
+@Component("blockchain")
 public class RawTransactionServiceImpl extends AbstractService implements RawTransactionService {
 
     private static final Logger logger = LoggerFactory.getLogger(RawTransactionServiceImpl.class);
