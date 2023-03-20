@@ -15,6 +15,7 @@ import com.webank.weid.blockchain.util.DataToolUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
@@ -23,6 +24,7 @@ import java.util.List;
  *
  * @author afeexian 2022.10
  */
+@Component("blockchain")
 public class EvidenceServiceImpl extends AbstractService implements EvidenceService {
 
     private static final Logger logger = LoggerFactory.getLogger(EvidenceServiceImpl.class);
