@@ -13,6 +13,7 @@ import com.webank.weid.blockchain.rpc.WeIdService;
 import com.webank.weid.blockchain.util.DataToolUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
@@ -21,6 +22,7 @@ import java.util.List;
  *
  * @author afeexian 2022.08
  */
+@Component("blockchain")
 public class WeIdServiceImpl extends AbstractService implements WeIdService {
 
     /**
@@ -136,8 +138,7 @@ public class WeIdServiceImpl extends AbstractService implements WeIdService {
                                 address,
                                 privateKey);
             } catch (PrivateKeyIllegalException e) {
-                logger
-                        .error("[updateWeId] updateWeId failed because privateKey is illegal. ",
+                logger.error("[updateWeId] updateWeId failed because privateKey is illegal. ",
                                 e);
                 return new ResponseData<>(false, e.getErrorCode());
             } catch (Exception e) {
