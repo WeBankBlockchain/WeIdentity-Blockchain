@@ -42,7 +42,7 @@ public class PolicyServiceImpl extends AbstractService implements PolicyService 
     public ResponseData<Integer> putPolicyIntoCpt(Integer cptId, List<Integer> policies,
                                                   String privateKey) {
         if(DataToolUtils.chainType.equals(ChainType.FISCO_BCOS_V2.getName())){
-            CptBaseInfo cptBaseInfo;
+            //CptBaseInfo cptBaseInfo;
             ResponseData<Integer> addResp = cptServiceEngineFisco
                     .putPolicyIntoCpt(cptId, policies, privateKey);
             if (addResp.getErrorCode() != ErrorCode.SUCCESS.getCode()) {
