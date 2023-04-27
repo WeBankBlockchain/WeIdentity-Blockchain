@@ -24,7 +24,6 @@ import java.util.List;
  *
  * @author afeexian 2022.10
  */
-@Component("blockchain")
 public class EvidenceServiceImpl extends AbstractService implements EvidenceService {
 
     private static final Logger logger = LoggerFactory.getLogger(EvidenceServiceImpl.class);
@@ -63,10 +62,15 @@ public class EvidenceServiceImpl extends AbstractService implements EvidenceServ
     }
 
     @Override
+    public String getGroupId(){
+        return this.groupId;
+    }
+
+    @Override
     public ResponseData<String> createEvidence(
             String hashValue,
             String signature,
-            String extra,
+            String log,
             Long timestamp,
             String privateKey
     ) {
@@ -74,7 +78,7 @@ public class EvidenceServiceImpl extends AbstractService implements EvidenceServ
             return evidenceServiceEngineFisco.createEvidence(
                     hashValue,
                     signature,
-                    extra,
+                    log,
                     timestamp,
                     privateKey
             );

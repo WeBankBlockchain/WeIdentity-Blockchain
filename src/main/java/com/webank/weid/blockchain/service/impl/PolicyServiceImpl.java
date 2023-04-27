@@ -25,7 +25,6 @@ import org.springframework.stereotype.Component;
  *
  * @author afeexian 2022.8
  */
-@Component("blockchain")
 public class PolicyServiceImpl extends AbstractService implements PolicyService {
 
     private static final Logger logger = LoggerFactory.getLogger(PolicyServiceImpl.class);

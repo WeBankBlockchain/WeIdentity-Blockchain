@@ -6,6 +6,7 @@ import com.webank.weid.blockchain.util.DataToolUtils;
 import com.webank.weid.blockchain.util.Multibase.Multibase;
 import com.webank.weid.blockchain.util.Multicodec.DecodedData;
 import com.webank.weid.blockchain.util.Multicodec.MulticodecEncoder;
+import com.webank.weid.blockchain.util.PropertyUtils;
 import lombok.Data;
 import org.fisco.bcos.sdk.model.CryptoType;
 
@@ -25,7 +26,7 @@ public class AuthenticationProperty {
     /**
      * Required: The verification method type.
      */
-    private String type = DataToolUtils.cryptoType == CryptoType.ECDSA_TYPE? "Ed25519VerificationKey2020":"SM2VerificationKey";
+    private String type = Integer.parseInt(PropertyUtils.getProperty("sdk.sm-crypto", "0")) == CryptoType.ECDSA_TYPE? "Ed25519VerificationKey2020":"SM2VerificationKey";
 
     /**
      * Required: The verification method controller.

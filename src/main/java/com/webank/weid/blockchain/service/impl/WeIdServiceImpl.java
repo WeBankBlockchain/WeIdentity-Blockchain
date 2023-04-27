@@ -14,6 +14,7 @@ import com.webank.weid.blockchain.util.DataToolUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
+//import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 
 import java.util.List;
 
@@ -22,7 +23,6 @@ import java.util.List;
  *
  * @author afeexian 2022.08
  */
-@Component("blockchain")
 public class WeIdServiceImpl extends AbstractService implements WeIdService {
 
     /**
