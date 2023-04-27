@@ -22,7 +22,6 @@ import java.util.List;
  *
  * @author chaoxinhu 2018.10
  */
-@Component("blockchain")
 public class AuthorityIssuerServiceImpl extends AbstractService implements AuthorityIssuerService {
 
     private static final Logger logger = LoggerFactory

@@ -17,7 +17,6 @@ import org.springframework.stereotype.Component;
  *
  * @author afeexian 2022.8
  */
-@Component("blockchain")
 public class RawTransactionServiceImpl extends AbstractService implements RawTransactionService {
 
     private static final Logger logger = LoggerFactory.getLogger(RawTransactionServiceImpl.class);

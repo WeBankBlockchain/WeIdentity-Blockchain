@@ -80,7 +80,7 @@ public class EvidenceServiceFiscoEngineFiscoV2 extends BaseEngineFisco implement
     public ResponseData<String> createEvidence(
         String hashValue,
         String signature,
-        String extra,
+        String log,
         Long timestamp,
         String privateKey
     ) {
@@ -96,7 +96,7 @@ public class EvidenceServiceFiscoEngineFiscoV2 extends BaseEngineFisco implement
             List<String> sigList = new ArrayList<>();
             sigList.add(signature);
             List<String> logList = new ArrayList<>();
-            logList.add(extra);
+            logList.add(log);
             List<BigInteger> timestampList = new ArrayList<>();
             timestampList.add(new BigInteger(String.valueOf(timestamp), 10));
             EvidenceContract evidenceContractWriter =
@@ -448,7 +448,7 @@ public class EvidenceServiceFiscoEngineFiscoV2 extends BaseEngineFisco implement
             }
             Map<String, EvidenceSignInfo> signInfoMap = new HashMap<>();
             for(int i=0; i<result.getValue1().size(); i++){
-                //如果signer已经存在（通过addSignatureAndLogs添加的签名和log），则覆盖签名，把log添加到已有的logs列表
+                //如果signer已经存在（通过addSignatureAndLogs添加的签名和log），则覆盖签名和时间，把log添加到已有的logs列表
                 if(signInfoMap.containsKey(result.getValue1().get(i))){
                     if(!StringUtils.isEmpty(result.getValue2().get(i))){
                         signInfoMap.get(result.getValue1().get(i)).setSignature(result.getValue2().get(i));

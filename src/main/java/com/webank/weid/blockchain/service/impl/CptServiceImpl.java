@@ -25,7 +25,6 @@ import org.springframework.stereotype.Component;
  *
  * @author afeexian
  */
-@Component("blockchain")
 public class CptServiceImpl extends AbstractService implements CptService {
 
     private static final Logger logger = LoggerFactory.getLogger(CptServiceImpl.class);
