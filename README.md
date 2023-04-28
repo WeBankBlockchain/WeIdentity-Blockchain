@@ -12,7 +12,7 @@ WeIdentity 区块链接入模块
 | weid-blockchain 版本 | weid-java-sdk 版本 | weid-contract-java 版本 | 备注 |
 | :---- | :---- | :---- | :---- |
 | v3.0.0-rc.1 | v3.0.0-rc.1 | v1.3.1-rc1 | 实现FISCO BCOS区块链接入 |
-| v3.0.0-rc.1 | v3.1.0-rc.1 | v1.3.2-rc1 | 常规更新 |
+| v3.1.0-rc.1 | v3.1.0-rc.1 | v1.3.2-rc1 | 常规更新 |
 
 * WeIdentity及其组件的[兼容版本说明文档](https://weidentity.readthedocs.io/zh_CN/develop/docs/compatibility.html) 请查看！
 
