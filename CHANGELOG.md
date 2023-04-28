@@ -1,3 +1,12 @@
+### v3.1.0 (2023-12-14)
+
+* 新增功能:
+1. 适配v1.3.2版本WeId-Contract-Java。.
+2. 升级已知漏洞组件。
+
+* Features:
+1. Adapt to WeId-Contract-Java v1.3.2.
+2. Upgrade components with known vulnerabilities.
 
 ### v3.0.0 (2022-12-14)
 WeIdentity-Blockchain首次release.
