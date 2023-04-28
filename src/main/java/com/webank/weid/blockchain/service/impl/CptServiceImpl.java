@@ -18,6 +18,7 @@ import com.webank.weid.blockchain.constant.WeIdConstant;
 import com.webank.weid.blockchain.protocol.response.ResponseData;
 import com.webank.weid.blockchain.protocol.response.RsvSignature;
 import com.webank.weid.blockchain.rpc.CptService;
+import org.springframework.stereotype.Component;
 
 /**
  * Service implementation for operation on CPT (Claim Protocol Type).

@@ -167,4 +167,6 @@ public interface EvidenceService {
             String customKey,
             String privateKey
     );
+
+    public String getGroupId();
 }

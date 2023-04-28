@@ -57,7 +57,7 @@ public class TransactionInfo {
      */
     public TransactionInfo(org.fisco.bcos.sdk.v3.model.TransactionReceipt receipt) {
         if (receipt != null) {
-            this.blockNumber = new BigInteger(receipt.getBlockNumber());
+            this.blockNumber = receipt.getBlockNumber();
             this.transactionHash = receipt.getTransactionHash();
             //this.transactionIndex = receipt.getTransactionIndex(); todo 3.0的链中去除了这个index值
 //            this.transactionIndex = new BigInteger(
