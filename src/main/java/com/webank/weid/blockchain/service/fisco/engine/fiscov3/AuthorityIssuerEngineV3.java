@@ -276,7 +276,7 @@ public class AuthorityIssuerEngineV3 extends BaseEngineFisco implements Authorit
             Boolean result = authorityIssuerController.isAuthorityIssuer(
                 address);
             resultData.setResult(result);
-            if (result) {
+            if (result != null) {
                 resultData.setErrorCode(ErrorCode.SUCCESS);
             } else {
                 resultData.setErrorCode(ErrorCode.AUTHORITY_ISSUER_CONTRACT_ERROR_NOT_EXISTS);

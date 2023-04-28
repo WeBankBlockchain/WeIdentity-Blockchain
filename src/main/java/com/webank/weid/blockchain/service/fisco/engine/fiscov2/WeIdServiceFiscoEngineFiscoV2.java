@@ -254,7 +254,6 @@ public class WeIdServiceFiscoEngineFiscoV2 extends BaseEngineFisco implements We
     public ResponseData<Boolean> deactivateWeId(
             String weAddress,
             String privateKey) {
-        List<String> authList = new ArrayList<>();
         TransactionReceipt receipt;
         WeIdContract weIdContract =
                 reloadContract(BaseServiceFisco.fiscoConfig.getWeIdAddress(), privateKey, WeIdContract.class);
