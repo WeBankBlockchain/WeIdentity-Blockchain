@@ -326,10 +326,6 @@ public class WeServerV3 extends WeServer<BcosSDK, Client, CryptoKeyPair> {
         cryptoMaterial.put("useSMCrypto", fiscoConfig.getSdkSMCrypto());
         cryptoMaterial.put("certPath", fiscoConfig.getSdkCertPath());
         logger.info("path:{} before", cryptoMaterial.get("certPath"));
-        //cryptoMaterial.put("certPath", "E:\\weid-afee\\WeIdentity\\out\\test\\resources");
-        //logger.info("path:{}", cryptoMaterial.get("certPath"));
-        //cryptoMaterial.put("certPath", "E:\\weid-afee\\WeIdentity\\out\\production\\resources");
-        //logger.info("[initThreadPool] the cryptoMaterial: {}.", cryptoMaterial);
         configProperty.setCryptoMaterial(cryptoMaterial);
     }
 
