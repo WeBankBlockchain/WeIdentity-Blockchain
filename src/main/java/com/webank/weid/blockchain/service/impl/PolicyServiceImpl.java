@@ -18,13 +18,13 @@ import org.slf4j.LoggerFactory;
 
 import com.webank.weid.blockchain.constant.ErrorCode;
 import com.webank.weid.blockchain.constant.WeIdConstant;
+import org.springframework.stereotype.Component;
 
 /**
  * Service implementations for operations on Evidence.
  *
- * @author chaoxinhu 2020.8
+ * @author afeexian 2022.8
  */
-
 public class PolicyServiceImpl extends AbstractService implements PolicyService {
 
     private static final Logger logger = LoggerFactory.getLogger(PolicyServiceImpl.class);
@@ -41,7 +41,7 @@ public class PolicyServiceImpl extends AbstractService implements PolicyService 
     public ResponseData<Integer> putPolicyIntoCpt(Integer cptId, List<Integer> policies,
                                                   String privateKey) {
         if(DataToolUtils.chainType.equals(ChainType.FISCO_BCOS_V2.getName())){
-            CptBaseInfo cptBaseInfo;
+            //CptBaseInfo cptBaseInfo;
             ResponseData<Integer> addResp = cptServiceEngineFisco
                     .putPolicyIntoCpt(cptId, policies, privateKey);
             if (addResp.getErrorCode() != ErrorCode.SUCCESS.getCode()) {

@@ -13,6 +13,7 @@ import com.webank.weid.blockchain.rpc.WeIdService;
 import com.webank.weid.blockchain.util.DataToolUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
