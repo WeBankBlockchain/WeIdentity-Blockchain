@@ -206,7 +206,7 @@ public class AuthorityIssuerEngineV2 extends BaseEngineFisco implements Authorit
                     return new ResponseData<>(true, errorCode, info);
                 }
             } else {
-                logger.error("remove authority issuer failed, transcation event decoding failure.");
+                logger.error("remove authority issuer failed, transaction event decoding failure.");
                 return new ResponseData<>(false, ErrorCode.AUTHORITY_ISSUER_ERROR, info);
             }
         } catch (Exception e) {
@@ -274,7 +274,7 @@ public class AuthorityIssuerEngineV2 extends BaseEngineFisco implements Authorit
             Boolean result = authorityIssuerController.isAuthorityIssuer(
                 address);
             resultData.setResult(result);
-            if (result) {
+            if (result != null) {
                 resultData.setErrorCode(ErrorCode.SUCCESS);
             } else {
                 resultData.setErrorCode(ErrorCode.AUTHORITY_ISSUER_CONTRACT_ERROR_NOT_EXISTS);

@@ -15,6 +15,7 @@ import com.webank.weid.blockchain.util.DataToolUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
@@ -61,10 +62,15 @@ public class EvidenceServiceImpl extends AbstractService implements EvidenceServ
     }
 
     @Override
+    public String getGroupId(){
+        return this.groupId;
+    }
+
+    @Override
     public ResponseData<String> createEvidence(
             String hashValue,
             String signature,
-            String extra,
+            String log,
             Long timestamp,
             String privateKey
     ) {
@@ -72,7 +78,7 @@ public class EvidenceServiceImpl extends AbstractService implements EvidenceServ
             return evidenceServiceEngineFisco.createEvidence(
                     hashValue,
                     signature,
-                    extra,
+                    log,
                     timestamp,
                     privateKey
             );

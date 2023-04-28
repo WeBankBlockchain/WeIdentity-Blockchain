@@ -92,7 +92,7 @@ public final class DataToolUtils {
 
     public static String chainType = PropertyUtils.getProperty("blockchain.type", "FISCO_BCOS");
 
-    public static String chainId;
+    public static String chainId = PropertyUtils.getProperty("chain.id", "1");
 
     //目前是否国密的配置选项在fisco.config文件，后面可以放在weidentity.config文件，作为所有链共用配置选项，
     //这样也需要更改build-tools。不管放在哪个文件，都可以被PropertyUtils统一捕获
@@ -121,15 +121,6 @@ public final class DataToolUtils {
         //OBJECT_READER = OBJECT_MAPPER.reader();
 
         JSON_SCHEMA_FACTORY = com.networknt.schema.JsonSchemaFactory.getInstance(VersionFlag.V4);
-    }
-
-    static {
-        if(chainType.equals(ChainType.FISCO_BCOS_V2.getName())){
-            chainId = CryptoFisco.fiscoConfig.getChainId();
-        }else {
-            //默认使用fisco的密码学工具
-            chainId = CryptoFisco.fiscoConfig.getChainId();
-        }
     }
 
     public static Integer getBlockNumber() throws IOException {
