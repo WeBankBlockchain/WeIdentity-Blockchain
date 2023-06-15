@@ -61,7 +61,7 @@ public abstract class DeployContract {
         } catch (WeIdBaseException e) {
             if (e.getErrorCode().getCode() == ErrorCode.CNS_NO_PERMISSION.getCode()) {
                 System.out.println("deploy fail, Maybe your private key is incorrect. Please make "
-                    + "sure that the root directory of the private key file ecdsa_key that "
+                    + "sure that the root directory of the private key file private_key that "
                     + "you deployed for the first time exists in the root directory.");
             }
             throw e;
