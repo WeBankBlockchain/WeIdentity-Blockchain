@@ -118,8 +118,8 @@ public class EvidenceServiceFiscoEngineFiscoV3 extends BaseEngineFisco implement
                 );
 
             TransactionInfo info = new TransactionInfo(receipt);
-            List<EvidenceAttributeChangedEventResponse> eventList =
-                evidenceContract.getEvidenceAttributeChangedEvents(receipt);
+            List<EvidenceContract.CreateEvidenceEventResponse> eventList =
+                evidenceContract.getCreateEvidenceEvents(receipt);
             if (eventList == null) {
                 return new ResponseData<>(StringUtils.EMPTY,
                     ErrorCode.CREDENTIAL_EVIDENCE_BASE_ERROR, info);
@@ -127,7 +127,7 @@ public class EvidenceServiceFiscoEngineFiscoV3 extends BaseEngineFisco implement
                 return new ResponseData<>(StringUtils.EMPTY,
                     ErrorCode.CREDENTIAL_EVIDENCE_ALREADY_EXISTS, info);
             } else {
-                for (EvidenceAttributeChangedEventResponse event : eventList) {
+                for (EvidenceContract.CreateEvidenceEventResponse event : eventList) {
                     if (event.sig.equalsIgnoreCase(signature)
                             && event.signer.equalsIgnoreCase(address)) {
                         return new ResponseData<>(hashValue, ErrorCode.SUCCESS, info);
